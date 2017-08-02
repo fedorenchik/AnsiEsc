@@ -24,4 +24,15 @@ AnsiEsc is enabled and one has used set conceallevel=[2 or 3]).
 Manual
 ------
 
-See documentation for detailed description.
+See doc/AnsiEsc.txt for detailed description.
+
+Installation
+------------
+
+If you don't have a preferred installation method, I recommend using Vim's
+packages feature, simply copy and paste:
+
+	mkdir -p ~/.vim/pack/bundle/start
+	cd ~/.vim/pack/bundle/start
+	git clone https://github.com/fedorenchik/AnsiEsc.git
+
