@@ -2,8 +2,8 @@
 "               save/restore mark position
 "               save/restore selected user maps
 "  Author:	Charles E. Campbell
-"  Version:	18j	ASTRO-ONLY
-"  Date:	Aug 13, 2016
+"  Version:	18k	ASTRO-ONLY
+"  Date:	Nov 22, 2017
 "
 "  Saving Restoring Destroying Marks: {{{1
 "       call SaveMark(markname)       let savemark= SaveMark(markname)
@@ -34,7 +34,7 @@
 if &cp || exists("g:loaded_cecutil")
  finish
 endif
-let g:loaded_cecutil = "v18j"
+let g:loaded_cecutil = "v18k"
 let s:keepcpo        = &cpo
 set cpo&vim
 "if exists("g:loaded_Decho")  " Decho
@@ -82,6 +82,7 @@ endif
 "    call SaveWinPosn()          will save window position in b:cecutil_winposn{b:cecutil_iwinposn}
 "    let winposn= SaveWinPosn(0) will *only* save window position in winposn variable (no stacking done)
 fun! SaveWinPosn(...)
+"  echomsg "Decho: SaveWinPosn() a:0=".a:0
   let savedposn= winsaveview()
   if a:0 == 0
    if !exists("b:cecutil_iwinposn")
@@ -384,7 +385,7 @@ fun! RestoreMark(markname)
    " markname is a savemark command (string)
 "	call Decho("use savemark command")
    let markcmd= strpart(a:markname,1)
-   call RestoreWinPosn(markcmd)
+  call RestoreWinPosn(winposn)
    exe "norm! m".markname
   endif
 

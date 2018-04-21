@@ -1,4 +1,4 @@
-*AnsiEsc.txt*	Ansi Escape Sequence Visualization		Feb 18, 2017
+*AnsiEsc.txt*	Ansi Escape Sequence Visualization		Apr 10, 2018
 
 Author:  Charles E. Campbell  <NdrOchip@ScampbellPfamily.AbizM>
 	  (remove NOSPAM from Campbell's email first)
@@ -167,6 +167,9 @@ White   [37;40mW[m  [37;41mW[m  [37;42mW[m  [37;43mW[m  [37;44mW[m   
 	Feb 18, 2017	* ansiConceal priority overruled foregroup specs
 			  containing background specs.
 			  (reported by Lucas Hoffman)
+	Apr 10, 2018	* (James McCoy) provided a patch so that the
+			  |'highlight'| option is no longer used when
+			  conceal is available (see |'conceallevel'|)
   v12	Jul 23, 2010	* changed conc to |'cole'| to correspond to vim 7.3's
 			  change
 			* for menus, &go =~# used to insure correct case

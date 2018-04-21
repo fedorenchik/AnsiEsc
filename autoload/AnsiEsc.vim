@@ -1,8 +1,8 @@
 " AnsiEsc.vim: Uses vim 7.0 syntax highlighting
 " Language:		Text with ansi escape sequences
 " Maintainer:	Charles E. Campbell <NdrOchipS@PcampbellAfamily.Mbiz>
-" Version:		13l	ASTRO-ONLY
-" Date:		Feb 18, 2017
+" Version:		13m	ASTRO-ONLY
+" Date:		Apr 10, 2018
 "
 " Usage: :AnsiEsc  (toggles)
 " Note:   This plugin requires +conceal
@@ -15,7 +15,7 @@
 if exists("g:loaded_AnsiEsc")
  finish
 endif
-let g:loaded_AnsiEsc = "v13l"
+let g:loaded_AnsiEsc = "v13m"
 if v:version < 700
  echohl WarningMsg
  echo "***warning*** this version of AnsiEsc needs vim 7.0"
@@ -60,7 +60,9 @@ fun! AnsiEsc#AnsiEsc(rebuild)
     exe 'silent! unmenu '.g:DrChipTopLvlMenu.'AnsiEsc'
     exe 'menu '.g:DrChipTopLvlMenu.'AnsiEsc.Start<tab>:AnsiEsc		:AnsiEsc<cr>'
    endif
-   let &l:hl= s:hlkeep_{bufnr("%")}
+   if !has('conceal')
+    let &l:hl= s:hlkeep_{bufnr("%")}
+   endif
 "   call Dret("AnsiEsc#AnsiEsc")
    return
   else
@@ -680,10 +682,10 @@ fun! AnsiEsc#AnsiEsc(rebuild)
    hi def link ansiIgnore	ansiStop
    hi def link ansiStop		Ignore
    hi def link ansiExtended	Ignore
+   let s:hlkeep_{bufnr("%")}= &l:hl
+"   call Decho("setl hl=".substitute(&hl,'8:[^,]\{-},','8:Ignore,',""))
+   exe "setl hl=".substitute(&hl,'8:[^,]\{-},','8:Ignore,',"")
   endif
-  let s:hlkeep_{bufnr("%")}= &l:hl
-"  call Decho("setl hl=".substitute(&hl,'8:[^,]\{-},','8:Ignore,',""))
-  exe "setl hl=".substitute(&hl,'8:[^,]\{-},','8:Ignore,',"")
 
   " handle 3 or more element ansi escape sequences by building syntax and highlighting rules
   " specific to the current file

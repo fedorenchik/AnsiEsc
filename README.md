@@ -5,7 +5,7 @@ This is github page of this plugin
 http://www.drchip.org/astronaut/vim/index.html#ANSIESC
 by Charles E. Campbell
 
-Updated Feb 18, 2017 (v13l)
+Updated Apr 10, 2018 (v13m)
 
 This plugin follows ANSI-escape sequences to colorize subsequent text using
 vim's syntax highlighting engine.
