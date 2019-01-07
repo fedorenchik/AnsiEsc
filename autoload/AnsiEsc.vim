@@ -1,8 +1,8 @@
 " AnsiEsc.vim: Uses vim 7.0 syntax highlighting
 " Language:		Text with ansi escape sequences
 " Maintainer:	Charles E. Campbell <NdrOchipS@PcampbellAfamily.Mbiz>
-" Version:		13m	ASTRO-ONLY
-" Date:		Apr 10, 2018
+" Version:		13n	ASTRO-ONLY
+" Date:		Nov 28, 2018
 "
 " Usage: :AnsiEsc  (toggles)
 " Note:   This plugin requires +conceal
@@ -15,7 +15,7 @@
 if exists("g:loaded_AnsiEsc")
  finish
 endif
-let g:loaded_AnsiEsc = "v13m"
+let g:loaded_AnsiEsc = "v13n"
 if v:version < 700
  echohl WarningMsg
  echo "***warning*** this version of AnsiEsc needs vim 7.0"
@@ -139,6 +139,14 @@ fun! AnsiEsc#AnsiEsc(rebuild)
   syn region ansiCyan		start="\e\[;\=0\{0,2};\=36m" skip='\e\[K' end="\e\["me=e-2 contains=ansiConceal
   syn region ansiWhite		start="\e\[;\=0\{0,2};\=37m" skip='\e\[K' end="\e\["me=e-2 contains=ansiConceal
   syn region ansiGray		start="\e\[;\=0\{0,2};\=90m" skip='\e\[K' end="\e\["me=e-2 contains=ansiConceal
+
+  syn region ansiRed		start="\e\[;\=0\{0,2};\=91m" skip='\e\[K' end="\e\["me=e-2 contains=ansiConceal
+  syn region ansiGreen		start="\e\[;\=0\{0,2};\=92m" skip='\e\[K' end="\e\["me=e-2 contains=ansiConceal
+  syn region ansiYellow		start="\e\[;\=0\{0,2};\=93m" skip='\e\[K' end="\e\["me=e-2 contains=ansiConceal
+  syn region ansiBlue		start="\e\[;\=0\{0,2};\=94m" skip='\e\[K' end="\e\["me=e-2 contains=ansiConceal
+  syn region ansiMagenta	start="\e\[;\=0\{0,2};\=95m" skip='\e\[K' end="\e\["me=e-2 contains=ansiConceal
+  syn region ansiCyan		start="\e\[;\=0\{0,2};\=96m" skip='\e\[K' end="\e\["me=e-2 contains=ansiConceal
+  syn region ansiWhite		start="\e\[;\=0\{0,2};\=97m" skip='\e\[K' end="\e\["me=e-2 contains=ansiConceal
 
   syn region ansiBoldBlack	start="\e\[;\=0\{0,2};\=\%(1;30\|30;1\)m" skip='\e\[K' end="\e\["me=e-2 contains=ansiConceal
   syn region ansiBoldRed	start="\e\[;\=0\{0,2};\=\%(1;31\|31;1\)m" skip="\e\[K" end="\e\["me=e-2 contains=ansiConceal

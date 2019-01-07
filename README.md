@@ -5,7 +5,7 @@ This is github page of this plugin
 http://www.drchip.org/astronaut/vim/index.html#ANSIESC
 by Charles E. Campbell
 
-Updated Apr 10, 2018 (v13m)
+Updated Nov 28, 2018 (v13n)
 
 This plugin follows ANSI-escape sequences to colorize subsequent text using
 vim's syntax highlighting engine.
@@ -19,7 +19,7 @@ With vim 7.2 and earlier, the escape sequence itself will take space but will be
 suppressed using "Ignore" highlighting. Vim 7.3 comes with Vince Negri's
 conceal/ownsyntax capabilities built-in. With it, ANSI-escape sequences will
 have their colorizing effects but will themselves be concealed (again, when
-AnsiEsc is enabled and one has used set conceallevel=[2 or 3]).
+AnsiEsc is enabled and one has used `set conceallevel=[2 or 3]`).
 
 Manual
 ------

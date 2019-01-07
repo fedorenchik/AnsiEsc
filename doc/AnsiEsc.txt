@@ -11,7 +11,8 @@ Copyright: (c) 2004-2017 by Charles E. Campbell		*AnsiEsc-copyright*
 1. Contents					*AnsiEsc* *AnsiEsc-contents*
    1. Contents         ...................................|AnsiEsc-contents|
    2. AnsiEsc Manual   ...................................|AnsiEsc|
-   3. AnsiEsc History  ...................................|AnsiEsc-history|
+   3. AnsiEsc Method   ...................................|AnsiEsc-Method|
+   4. AnsiEsc History  ...................................|AnsiEsc-history|
 
 ==============================================================================
 2. Manual						*AnsiEsc-manual*
@@ -150,7 +151,28 @@ White   [37;40mW[m  [37;41mW[m  [37;42mW[m  [37;43mW[m  [37;44mW[m   
 
 
 ==============================================================================
-3. AnsiEsc History					*AnsiEsc-history* {{{1
+3. AnsiEsc Method					*AnsiEsc-Method* {{{1
+
+Method 1: AnsiEsc implements syntax highlighting rules for highlighting the
+basic eight colors (black-red-green-yellow-blue-magenta-cyan-white, plus gray)
+atop the same basic eight colors, and rules for italic, bold, and underline.
+These comprise a fixed set of syntax highlighting rules.
+
+Method 2: Ansi escape codes may also represent a 6x6x6 color cube for an
+additional 216 colors, plus 25 grayscale colors.  To handle these, AnsiEsc
+analyzes the file and builds custom syntax highlighting rules.  These comprise
+a variable set of syntax highlighting rules.  I did it this way because things
+
+	a) broke (ie. vim was unable to handle 262000+ syntax highlighting rules),
+	   and
+
+	b) took excessive amounts of time to load a fixed set of rules for
+	   256 foreground atop 256 background syntax highlighting rules with
+	   variants for italic, underline, and bold.
+
+
+==============================================================================
+4. AnsiEsc History					*AnsiEsc-history* {{{1
   v13	Apr 12, 2012	* (Peter Brant) a "conceal" was left on a syntax
 			  definition in a no-conceal-support if block.
 			  Fixed.
