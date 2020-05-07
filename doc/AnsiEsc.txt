@@ -1,4 +1,4 @@
-*AnsiEsc.txt*	Ansi Escape Sequence Visualization		Apr 10, 2018
+*AnsiEsc.txt*	Ansi Escape Sequence Visualization		May 01, 2019
 
 Author:  Charles E. Campbell  <NdrOchip@ScampbellPfamily.AbizM>
 	  (remove NOSPAM from Campbell's email first)
@@ -192,6 +192,9 @@ a variable set of syntax highlighting rules.  I did it this way because things
 	Apr 10, 2018	* (James McCoy) provided a patch so that the
 			  |'highlight'| option is no longer used when
 			  conceal is available (see |'conceallevel'|)
+	May 01, 2019	* (barrie) reported that <esc>[24m was showing up as
+			  a "stray m".  Reason: ansiSuppress wasn't handling
+			  the code.
   v12	Jul 23, 2010	* changed conc to |'cole'| to correspond to vim 7.3's
 			  change
 			* for menus, &go =~# used to insure correct case
