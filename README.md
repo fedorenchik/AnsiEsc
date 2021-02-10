@@ -1,3 +1,8 @@
+Deprecated
+==========
+
+Please, consider using https://github.com/chrisbra/Colorizer plugin.
+
 ANSI Highlighting
 =================
 
